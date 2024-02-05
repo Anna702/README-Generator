@@ -2,14 +2,17 @@
 function generateMarkdown(data) {
   return `
   # Project Title: 
-  ${data.title} ${data.getLicense}
+  ${data.title} 
+  ${
+    data.hasDescription
+      ? `
+# Description:
+${data.description}
 
-  # Description:
-  ${data.description}
-
-  ## This project was created:  
-  ${data.wasCreated}
-
+## This project was created:  
+${data.whyCreated}`
+      : ""
+  }
   # Table of Contents
     * [Installation](#-Installation)
     * [Usage](#-Usage)
