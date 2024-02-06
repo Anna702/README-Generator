@@ -103,13 +103,13 @@ const userQuestions = [
   {
     type: "input",
     name: "gitHub",
-    message: "What is your gitHub name?",
+    message: "What is your gitHub username?",
     validate: validInput,
   },
   {
     type: "input",
     name: "linkedIn",
-    message: "What is your LinkedIn profile?",
+    message: "What is your LinkedIn username?",
   },
 ];
 

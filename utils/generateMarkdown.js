@@ -1,43 +1,41 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
   let readmeContent = `
-  # Title: ${data.title} ${data.addLicense}
-  `;
-
+  # ${data.title} ${data.addLicense}
+`;
   if (data.tableOfContents) {
     readmeContent += `## Contents
-    `;
+`;
+
     if (data.hasDescription)
-      readmeContent += `- [Description](#description)
-    `;
+      readmeContent += `* [Description](#description)
+`;
     if (data.userStory)
-      readmeContent += `- [User story](#user%20story)
-    `;
+      readmeContent += `* [User story](#user%20story)
+`;
     if (data.installation)
-      readmeContent += `- [Installation](#installation)
-    `;
+      readmeContent += `* [Installation](#installation)
+`;
     if (data.usage)
-      readmeContent += `- [Usage](#usage)
-    `;
+      readmeContent += `* [Usage](#usage)
+`;
     if (data.tests)
-      readmeContent += `- [Tests](#tests) 
-    `;
+      readmeContent += `* [Tests](#tests) 
+`;
     if (data.credits)
-      readmeContent += `- [Credits](#credits)
-    `;
-    readmeContent += `- [Questions](#questions)
-    `;
+      readmeContent += `* [Credits](#credits)
+`;
+    readmeContent += `* [Questions](#questions)
+`;
     if (data.email || data.gitHub || data.linkedIn)
-      readmeContent += `- [Contacts](#contacts)
-    `;
+      readmeContent += `* [Contacts](#contacts)`;
   }
 
   if (data.hasDescription) {
     readmeContent += `
 ## Description:
 ${data.description} 
-${data.whyCreated}
-`;
+${data.whyCreated}`;
   }
 
   if (data.userStory) {
@@ -45,8 +43,7 @@ ${data.whyCreated}
 ## User story
 \`\`\`
 ${data.userStory}
-\`\`\`
-`;
+\`\`\``;
   }
 
   if (data.wasDeployed && data.deployed) {
@@ -90,10 +87,11 @@ In case you have any questions, feel free to contact me at
 
 `;
     if (data.gitHub)
-      readmeContent += `* GitHub: ${data.gitHub}
+      readmeContent += `* GitHub: [${data.gitHub}](https://github.com/${data.gitHub})
+    
 `;
     if (data.linkedIn)
-      readmeContent += `* LinkedIn: ${data.linkedIn}
+      readmeContent += `* LinkedIn: [${data.linkedIn}](https://www.linkedin.com/in/${data.linkedIn})   
 `;
   }
 
