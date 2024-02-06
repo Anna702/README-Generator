@@ -26,7 +26,9 @@ ${data.whyCreated}`
   }
 
 ## User story
+\`\`\`
 ${data.userStory}
+\`\`\`
 
 ${
   data.wasDeployed

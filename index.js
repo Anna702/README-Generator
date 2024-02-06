@@ -147,16 +147,15 @@ function addALicenseBadge(license) {
 }
 
 // function to initalize the CLI app
-function init() {
-  inquirer.prompt(userQuestions).then((data) => {
-    data.addLicense = addALicenseBadge(data.license);
-    const folderPath = "./created-README/";
-    const fileName = path.join(
-      folderPath,
-      `${data.title.replace(/\s+/g, "-").toLowerCase()}_README.md`
-    );
-    writeFile(fileName, data);
-  });
+async function init() {
+  const data = await inquirer.prompt(userQuestions);
+  data.addLicense = addALicenseBadge(data.license);
+  const folderPath = "./created-README/";
+  const fileName = path.join(
+    folderPath,
+    `${data.title.replace(/\s+/g, "-").toLowerCase()}_README.md`
+  );
+  writeFile(fileName, data);
 }
 
 //calling init() to start the app
