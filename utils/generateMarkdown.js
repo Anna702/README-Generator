@@ -58,16 +58,19 @@ ${data.userStory}
 ## Installation
 ${data.installation}
 `;
+
   if (data.usage)
     readmeContent += `
 ## Usage
 ${data.usage}
 `;
+
   if (data.tests)
     readmeContent += `
 ## Tests
 ${data.tests}
 `;
+
   if (data.credits)
     readmeContent += `
 ## Credits
@@ -81,7 +84,7 @@ In case you have any questions, feel free to contact me at
 <a href="mailto:${data.email}">${data.email}</a>.
 `;
 
-  if (data.email || data.gitHub || data.linkedIn) {
+  if (data.gitHub || data.linkedIn) {
     readmeContent += `
 ## Contacts:
 
