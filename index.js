@@ -66,6 +66,7 @@ const userQuestions = [
     type: "confirm",
     name: "wasDeployed",
     message: "Is your app deployed?",
+    default: false,
   },
   {
     type: "input",

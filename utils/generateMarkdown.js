@@ -1,64 +1,103 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `
+  let readmeContent = `
   # Title: ${data.title} ${data.addLicense}
-    ${
-      data.tableOfContents
-        ? `## Contents
-    - [Description](#description)
-    - [User story](#user%20story)
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Tests](#tests) 
-    - [Credits](#credits)
-    - [Questions](#questions)
-    - [Contacts](#contacts)`
-        : ""
-    }
-  
-  ${
-    data.hasDescription
-      ? `
-## Description:
-${data.description} 
-${data.whyCreated}`
-      : ""
+  `;
+
+  if (data.tableOfContents) {
+    readmeContent += `## Contents
+    `;
+    if (data.hasDescription)
+      readmeContent += `- [Description](#description)
+    `;
+    if (data.userStory)
+      readmeContent += `- [User story](#user%20story)
+    `;
+    if (data.installation)
+      readmeContent += `- [Installation](#installation)
+    `;
+    if (data.usage)
+      readmeContent += `- [Usage](#usage)
+    `;
+    if (data.tests)
+      readmeContent += `- [Tests](#tests) 
+    `;
+    if (data.credits)
+      readmeContent += `- [Credits](#credits)
+    `;
+    readmeContent += `- [Questions](#questions)
+    `;
+    if (data.email || data.gitHub || data.linkedIn)
+      readmeContent += `- [Contacts](#contacts)
+    `;
   }
 
+  if (data.hasDescription) {
+    readmeContent += `
+## Description:
+${data.description} 
+${data.whyCreated}
+`;
+  }
+
+  if (data.userStory) {
+    readmeContent += `
 ## User story
 \`\`\`
 ${data.userStory}
 \`\`\`
+`;
+  }
 
-${
-  data.wasDeployed
-    ? `
-## Deployed app:
-${data.deployed}`
-    : ""
-}
+  if (data.wasDeployed && data.deployed) {
+    readmeContent += `
+## Deployed app: 
+[Click here](${data.deployed}) to see the live ${data.title} app.
+`;
+  }
 
+  if (data.installation)
+    readmeContent += `
 ## Installation
 ${data.installation}
-
+`;
+  if (data.usage)
+    readmeContent += `
 ## Usage
 ${data.usage}
-
+`;
+  if (data.tests)
+    readmeContent += `
 ## Tests
 ${data.tests}
-
+`;
+  if (data.credits)
+    readmeContent += `
 ## Credits
 ${data.credits}
+`;
 
+  readmeContent += `
 ## Questions
 
-In case you have any questions, feel free to contact me at ${data.email}.
+In case you have any questions, feel free to contact me at 
+<a href="mailto:${data.email}">${data.email}</a>.
+`;
 
+  if (data.email || data.gitHub || data.linkedIn) {
+    readmeContent += `
 ## Contacts:
 
-* GitHub: ${data.gitHub}
-* LinkedIn: ${data.linkedIn}
 `;
+    if (data.gitHub)
+      readmeContent += `* GitHub: ${data.gitHub}
+`;
+    if (data.linkedIn)
+      readmeContent += `* LinkedIn: ${data.linkedIn}
+`;
+  }
+
+  return readmeContent;
 }
 
 module.exports = generateMarkdown;
