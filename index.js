@@ -12,6 +12,12 @@ const userQuestions = [
   },
   {
     type: "confirm",
+    name: "tableOfContents",
+    message: "Do you want to include a Table of Contents?",
+    default: true,
+  },
+  {
+    type: "confirm",
     name: "hasDescription",
     message: "Do you want to provide a description for your project?",
   },
@@ -29,13 +35,6 @@ const userQuestions = [
     name: "whyCreated",
     message: "Why did you create this project?",
     when: (answers) => answers.hasDescription,
-    validate: validInput,
-  },
-  {
-    type: "confirm",
-    name: "tableOfContents",
-    message: "Do you want to include a Table of Contents?",
-    default: true,
   },
   {
     type: "list",
@@ -50,6 +49,66 @@ const userQuestions = [
       "GPLv3",
       "None",
     ],
+  },
+  {
+    type: "confirm",
+    name: "hasUserStory",
+    message: "Do you want to include a User Story?",
+  },
+  {
+    type: "input",
+    name: "userStory",
+    message:
+      "Write a User Story using the pattern As A <type of user>, I WANT <what?> SO THAT <why?>",
+    when: (answers) => answers.hasUserStory,
+  },
+  {
+    type: "confirm",
+    name: "wasDeployed",
+    message: "Is your app deployed?",
+  },
+  {
+    type: "input",
+    name: "deployed",
+    message: "Provide a link for an app",
+    when: (answers) => answers.wasDeployed,
+  },
+  {
+    type: "input",
+    name: "installation",
+    message: "Provide a step-by-step guide for the installation process",
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "Provide a step-by-step guide on how to utilize the application.",
+  },
+  {
+    type: "input",
+    name: "tests",
+    message:
+      "Do you have any automated tests for critical functionalities? Please, tell some more:",
+  },
+  {
+    type: "input",
+    name: "credits",
+    message: "List the main contributors to the project",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is your contact email?",
+  },
+  {
+    type: "input",
+    name: "gitHub",
+    message: "What is your gitHub name?",
+    validate: validInput,
+  },
+  {
+    type: "input",
+    name: "linkedIn",
+    message: "What is your LinkedIn profile?",
   },
 ];
 
