@@ -13,7 +13,8 @@ As a part of the IT Bootcamp curriculum requirements, I had to build this applic
 - [User story](#user%20story)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Walkthrough Video](Walkthrough%20Video)
+- [Walkthrough Video](#walkthrough%20Video)
+- [App ScreenShot](#screenshot)
 - [Questions](#questions)
 - [Contacts](#contacts)
 
@@ -43,6 +44,13 @@ To use this command-line application, follow these steps:
 5. Once all information is provided, a high-quality, professional README.md file will be generated automatically.
 
 ## Walkthrough Video:
+
+The video can be found at [this YouTube link](https://youtu.be/mpi0HQnQ9UE).
+It demonstrates how to navigate through the application and explains each step of the process.
+
+## Screenshot
+
+![Anna-Chernova-README-generator-app-Screenshot](/assets/app_Screenshot.png)
 
 ## Credits
 
