@@ -50,7 +50,7 @@ It demonstrates how to navigate through the application and explains each step o
 
 ## Screenshot
 
-![Anna-Chernova-README-generator-app-Screenshot](/assets/app_Screenshot.png)
+![Anna-Chernova-README-generator-app-Screenshot](/assets/App-Screenshot.png)
 
 ## Credits
 
